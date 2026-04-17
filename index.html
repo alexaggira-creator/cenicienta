@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis 15 años Mariana 👑</title>
+  <meta name="description" content="Invitación digital a la quinceañera de Mariana. Celebración especial de sus 15 años." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1.1" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════ -->
+  <!--      PANTALLA DE INTRO (VIDEO 1)    -->
+  <!-- ═══════════════════════════════════ -->
+  <div id="intro-screen">
+    <video id="intro-video" playsinline muted autoplay loop>
+      <source src="intro.mp4" type="video/mp4" />
+    </video>
+    <div id="intro-overlay">
+      <div id="intro-tap-hint">
+        <span class="tap-icon">▶</span>
+        <p>Toca para comenzar</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!--          INVITACIÓN PRINCIPAL       -->
+  <!-- ═══════════════════════════════════ -->
+  <div id="invitation" class="hidden">
+
+    <!-- Partículas de fondo -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Audio de fondo -->
+    <audio id="bg-music" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Control de música -->
+    <button id="music-btn" title="Música">♪</button>
+
+    <!-- ── SECCIÓN HERO (INMERSIVA) ── -->
+    <section id="hero">
+      <video id="hero-video-bg" playsinline muted autoplay loop>
+        <source src="opening.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="hero-pre">Con la gracia de Dios y el amor de su familia</p>
+        <div class="crown-divider">👑</div>
+        <h1 class="hero-name"><small style="display:block; font-size: 0.4em; letter-spacing: 0.2em; margin-bottom: 0.2em;">Mis 15 años</small>Mariana</h1>
+        <p class="hero-age">cumple sus</p>
+        <div class="hero-number">
+          <span class="number-big">XV</span>
+          <span class="number-sub">Años</span>
+        </div>
+        <div class="hero-ornament">✦ ─────────── ✦ ─────────── ✦</div>
+        <p class="hero-date-preview">Sábado · 24 de Octubre · 2026</p>
+        <a href="#countdown" class="hero-cta">Ver Detalles <span>↓</span></a>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ── CUENTA REGRESIVA ── -->
+    <section id="countdown">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 class="section-title">Faltan</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <span id="cd-days" class="cd-number">00</span>
+          <span class="cd-label">Días</span>
+        </div>
+        <div class="countdown-dot">:</div>
+        <div class="countdown-item">
+          <span id="cd-hours" class="cd-number">00</span>
+          <span class="cd-label">Horas</span>
+        </div>
+        <div class="countdown-dot">:</div>
+        <div class="countdown-item">
+          <span id="cd-mins" class="cd-number">00</span>
+          <span class="cd-label">Minutos</span>
+        </div>
+        <div class="countdown-dot">:</div>
+        <div class="countdown-item">
+          <span id="cd-secs" class="cd-number">00</span>
+          <span class="cd-label">Segundos</span>
+        </div>
+      </div>
+      <p class="countdown-for">Para la celebración de Mariana</p>
+    </section>
+
+    <!-- ── DETALLE DEL EVENTO ── -->
+    <section id="event-details">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 class="section-title">El Gran Evento</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Tarjeta: Misa -->
+      <div class="detail-card reveal">
+        <div class="detail-card-icon">⛪</div>
+        <div class="detail-card-body">
+          <h3 class="detail-card-title">Santa Misa de Acción de Gracias</h3>
+          <p class="detail-card-info">
+            <span class="info-icon">🕕</span> 6:00 PM
+          </p>
+          <p class="detail-card-info">
+            <span class="info-icon">📍</span> Parroquia Nuestra Señora del Carmen<br/>
+            <small>Av. Principal · Ciudad</small>
+          </p>
+          <p class="detail-card-info">
+            <span class="info-icon">📅</span> Sábado, 24 de Octubre de 2026
+          </p>
+        </div>
+      </div>
+
+      <!-- Tarjeta: Recepción -->
+      <div class="detail-card reveal">
+        <div class="detail-card-icon">🎊</div>
+        <div class="detail-card-body">
+          <h3 class="detail-card-title">Gran Recepción & Fiesta</h3>
+          <p class="detail-card-info">
+            <span class="info-icon">🕗</span> 7:30 PM – 2:00 AM
+          </p>
+          <p class="detail-card-info">
+            <span class="info-icon">📍</span> Salón de Eventos "Palazzo Blu"<br/>
+            <small>Calle Elegancia 123 · Ciudad</small>
+          </p>
+          <p class="detail-card-info">
+            <span class="info-icon">👗</span> Etiqueta formal – Azul y Dorado
+          </p>
+        </div>
+        <a
+          href="https://maps.google.com/?q=Salon+de+Eventos+Palazzo+Blu"
+          target="_blank"
+          class="map-btn"
+        >📌 Ver en Mapa</a>
+      </div>
+    </section>
+
+    <!-- ── MENSAJE DE PADRES ── -->
+    <section id="parents-message">
+      <div class="pm-inner reveal">
+        <div class="pm-ornament">✦</div>
+        <p class="pm-text">
+          Con el corazón lleno de gratitud a Dios y de amor hacia nuestra hija,<br/>
+          celebramos con inmenso orgullo sus quince años.<br/>
+          Con todo nuestro amor,
+        </p>
+        <p class="pm-parents">Sus padres: <strong>Nombre Papá & Nombre Mamá</strong></p>
+        <div class="pm-ornament">✦</div>
+      </div>
+    </section>
+
+    <!-- ── GALERÍA ── -->
+    <section id="gallery">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 class="section-title">Galería</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="gallery-subtitle">Momentos que atesora nuestro corazón</p>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Las fotos se agregan aquí. Agrega imágenes con el nombre foto1.jpg, foto2.jpg, etc. -->
+        <div class="gallery-placeholder reveal">
+          <div class="gallery-placeholder-icon">📷</div>
+          <p>Próximamente<br/>las fotos de Mariana</p>
+        </div>
+        <div class="gallery-placeholder reveal">
+          <div class="gallery-placeholder-icon">🌸</div>
+          <p>Agrega tus imágenes<br/>a la carpeta del proyecto</p>
+        </div>
+        <div class="gallery-placeholder reveal">
+          <div class="gallery-placeholder-icon">✨</div>
+          <p>foto1.jpg · foto2.jpg<br/>foto3.jpg · foto4.jpg</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DRESSCODE ── -->
+    <section id="dresscode">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 class="section-title">Código de Vestimenta</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="dresscode-content reveal">
+        <div class="dresscode-palette">
+          <div class="color-swatch swatch-blue" title="Azul zafiro"></div>
+          <div class="color-swatch swatch-gold" title="Dorado"></div>
+          <div class="color-swatch swatch-navy" title="Azul marino"></div>
+          <div class="color-swatch swatch-cream" title="Marfil"></div>
+        </div>
+        <div class="dresscode-text">
+          <p class="dresscode-label">Etiqueta Formal</p>
+          <p class="dresscode-desc">
+            Te invitamos a vestir en tonos <strong>azul</strong>, <strong>dorado</strong>,
+            <strong>marino</strong> o <strong>marfil</strong>.<br/>
+            Damas: vestido largo o de cóctel.<br/>
+            Caballeros: traje formal.
+          </p>
+          <p class="dresscode-note">⚠️ Por favor evitar el color blanco. Gracias.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONFIRMACIÓN / RSVP ── -->
+    <section id="rsvp">
+      <div class="section-header">
+        <div class="section-line"></div>
+        <h2 class="section-title">Confirma tu Asistencia</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="rsvp-container reveal">
+        <p class="rsvp-desc">
+          Por favor confirma antes del <strong>17 de Octubre de 2026</strong>.<br/>
+          Tu presencia es nuestro mejor regalo. 💙
+        </p>
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="rsvp-name">Tu nombre completo</label>
+            <input type="text" id="rsvp-name" placeholder="Ej: María González" required />
+          </div>
+          <div class="form-group">
+            <label for="rsvp-guests">Número de invitados</label>
+            <select id="rsvp-guests">
+              <option value="1">Solo yo (1 persona)</option>
+              <option value="2">2 personas</option>
+              <option value="3">3 personas</option>
+              <option value="4">4 personas</option>
+              <option value="5">5+ personas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>¿Asistiré?</label>
+            <div class="rsvp-radio-group">
+              <label class="radio-label">
+                <input type="radio" name="attending" value="yes" checked />
+                <span>¡Con mucho gusto! 🎉</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attending" value="no" />
+                <span>No podré asistir 😢</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="rsvp-btn" id="rsvp-submit-btn">
+            Confirmar por WhatsApp 💬
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ── MENSAJE FINAL ── -->
+    <footer id="footer">
+      <div class="footer-stars">✦ ✦ ✦</div>
+      <div class="footer-crown">👑</div>
+      <h2 class="footer-name">Mariana</h2>
+      <p class="footer-tagline">XV Años</p>
+      <p class="footer-quote">"Todo lo que soy, todo lo que seré, comienza hoy."</p>
+      <div class="footer-date">24 · 10 · 2026</div>
+      <p class="footer-credits">Diseño con 💙💛 para un día especial</p>
+    </footer>
+
+  </div><!-- fin #invitation -->
+
+  <script src="script.js"></script>
+</body>
+</html>
