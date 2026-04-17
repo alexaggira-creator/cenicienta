@@ -62,7 +62,7 @@ body {
 }
 
 #intro-video {
-  width: 100%;
+  width: 150%;
   height: 100%;
   object-fit: cover;
   background: #000;
@@ -237,10 +237,12 @@ body {
 /* ── Video Inmersivo de Fondo ── */
 #hero-video-bg {
   position: absolute;
-  top: -10%; /* Desplaza el video hacia arriba */
+  top: -10%;
+  /* Desplaza el video hacia arriba */
   left: 0;
   width: 100%;
-  height: 120%; /* Lo hace más alto para cubrir el desplazamiento */
+  height: 130%;
+  /* Lo hace más alto para cubrir el desplazamiento */
   object-fit: cover;
   object-position: center center;
   z-index: 0;
@@ -740,31 +742,53 @@ body {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 500px;
+  grid-auto-rows: 200px;
+  gap: 16px;
+  max-width: 600px;
   width: 100%;
 }
 
-/* Fotos reales */
+/* Estilo mosaico premium */
 .gallery-grid img {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
   border-radius: 12px;
-  border: 1.5px solid rgba(212, 175, 55, 0.3);
-  transition: var(--transition);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(26, 58, 107, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
+}
+
+.gallery-grid img:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1.5;
+  height: 300px;
+}
+
+.gallery-grid img:nth-child(2) {
+  grid-row: span 2;
+  height: 416px; /* 200 + 200 + gap */
+}
+
+.gallery-grid img:nth-child(3) {
+  grid-row: span 1;
+}
+
+.gallery-grid img:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .gallery-grid img:hover {
   border-color: var(--gold);
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
-}
-
-.gallery-grid img:first-child {
-  grid-column: 1 / -1;
-  aspect-ratio: 16/9;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 15px 45px rgba(0, 0, 0, 0.5), 
+    0 0 25px rgba(212, 175, 55, 0.3);
+  filter: brightness(1.1);
+  z-index: 10;
 }
 
 /* Placeholders (mientras no hay fotos) */
