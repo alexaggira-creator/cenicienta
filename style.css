@@ -64,7 +64,9 @@ body {
 #intro-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #000;
+  object-position: center;
   display: block;
 }
 
@@ -235,14 +237,12 @@ body {
 /* ── Video Inmersivo de Fondo ── */
 #hero-video-bg {
   position: absolute;
-  top: -50%;
-  /* Desplaza el video hacia arriba */
+  top: -10%; /* Desplaza el video hacia arriba */
   left: 0;
   width: 100%;
-  height: 180%;
-  /* Lo hace más alto para cubrir el desplazamiento */
+  height: 120%; /* Lo hace más alto para cubrir el desplazamiento */
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
   z-index: 0;
 }
 
